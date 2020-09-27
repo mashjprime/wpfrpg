@@ -15,7 +15,11 @@ namespace Engine.ViewModels
         {
             CurrentPlayer = new Player();
             CurrentPlayer.Name = "Jungalist";
-            CurrentPlayer.Gold = 100000;
+            CurrentPlayer.CharacterClass = "Fighter";
+            CurrentPlayer.HitPoints = 10;
+            CurrentPlayer.ExperiencePoints = 0;
+            CurrentPlayer.Level = 1;
+            CurrentPlayer.Gold = 1000;
         }
     }
 }
