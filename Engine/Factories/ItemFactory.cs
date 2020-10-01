@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Engine.Models;
 
 namespace Engine.Factories
@@ -31,11 +28,15 @@ namespace Engine.Factories
 
             if (standardItem != null)
             {
+                if (standardItem is Weapon)
+                {
+                    return (standardItem as Weapon).Clone();
+                }
+
                 return standardItem.Clone();
             }
 
             return null;
-
         }
     }
 }
