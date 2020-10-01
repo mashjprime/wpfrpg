@@ -8,7 +8,7 @@ namespace Engine.Models
 {
     public class World
     {
-        private List<Location> _locations = new List<Location>();
+        private readonly List<Location> _locations = new List<Location>();
 
         internal void AddLocation(int xCoordinate, int yCoordinate, string name, string description, string imageName)
         {
@@ -17,21 +17,21 @@ namespace Engine.Models
             loc.YCoordinate = yCoordinate;
             loc.Name = name;
             loc.Description = description;
-            loc.ImageName = imageName;
+            loc.ImageName = $"/Engine;component/Images/Locations/{imageName}";
 
             _locations.Add(loc);
-
         }
 
-        public Location LocationAt(int XCoordinate, int YCoordintate)
+        public Location LocationAt(int xCoordinate, int yCoordinate)
         {
-            foreach(Location loc in _locations)
+            foreach (Location loc in _locations)
             {
-                if(loc.XCoordinate == XCoordinate && loc.YCoordinate == YCoordintate)
+                if (loc.XCoordinate == xCoordinate && loc.YCoordinate == yCoordinate)
                 {
                     return loc;
                 }
             }
+
             return null;
         }
     }
